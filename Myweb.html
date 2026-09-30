@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Tester</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        #lastKey {
+            font-size: 30px;
+            margin: 20px;
+            color: #00ff88;
+        }
+
+        .keyboard {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-bottom: 6px;
+        }
+
+        .key {
+            min-width: 45px;
+            height: 45px;
+            background: #222;
+            border: 1px solid #555;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        .wide {
+            min-width: 75px;
+        }
+
+        .xwide {
+            min-width: 100px;
+        }
+
+        .space {
+            min-width: 300px;
+        }
+
+        .pressed {
+            background: #00aa66;
+            border-color: #00ff88;
+            color: white;
+        }
+
+        #pressedKeys {
+            margin-top: 25px;
+            font-size: 18px;
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Keyboard Tester</h1>
+
+    <p>Press any key on your keyboard</p>
+
+    <div id="lastKey">
+        Last Key: —
+    </div>
+
+    <div class="keyboard">
+
+        <div class="row">
+            <div class="key" data-key="Escape">Esc</div>
+            <div class="key" data-key="F1">F1</div>
+            <div class="key" data-key="F2">F2</div>
+            <div class="key" data-key="F3">F3</div>
+            <div class="key" data-key="F4">F4</div>
+            <div class="key" data-key="F5">F5</div>
+            <div class="key" data-key="F6">F6</div>
+            <div class="key" data-key="F7">F7</div>
+            <div class="key" data-key="F8">F8</div>
+            <div class="key" data-key="F9">F9</div>
+            <div class="key" data-key="F10">F10</div>
+            <div class="key" data-key="F11">F11</div>
+            <div class="key" data-key="F12">F12</div>
+        </div>
+
+        <div class="row">
+            <div class="key" data-key=""></div>
+            <div class="key" data-key="1">1</div>
+            <div class="key" data-key="2">2</div>
+            <div class="key" data-key="3">3</div>
+            <div class="key" data-key="4">4</div>
+            <div class="key" data-key="5">5</div>
+            <div class="key" data-key="6">6</div>
+            <div class="key" data-key="7">7</div>
+            <div class="key" data-key="8">8</div>
+            <div class="key" data-key="9">9</div>
+            <div class="key" data-key="0">0</div>
+            <div class="key" data-key="-">-</div>
+            <div class="key" data-key="=">=</div>
+            <div class="key wide" data-key="Backspace">Backspace</div>
+        </div>
+
+        <div class="row">
+            <div class="key wide" data-key="Tab">Tab</div>
+            <div class="key" data-key="q">Q</div>
+            <div class="key" data-key="w">W</div>
+            <div class="key" data-key="e">E</div>
+            <div class="key" data-key="r">R</div>
+            <div class="key" data-key="t">T</div>
+            <div class="key" data-key="y">Y</div>
+            <div class="key" data-key="u">U</div>
+            <div class="key" data-key="i">I</div>
+            <div class="key" data-key="o">O</div>
+            <div class="key" data-key="p">P</div>
+            <div class="key" data-key="[">[</div>
+            <div class="key" data-key="]">]</div>
+            <div class="key" data-key="\"> \ </div>
+        </div>
+
+        <div class="row">
+            <div class="key xwide" data-key="CapsLock">Caps Lock</div>
+            <div class="key" data-key="a">A</div>
+            <div class="key" data-key="s">S</div>
+            <div class="key" data-key="d">D</div>
+            <div class="key" data-key="f">F</div>
+            <div class="key" data-key="g">G</div>
+            <div class="key" data-key="h">H</div>
+            <div class="key" data-key="j">J</div>
+            <div class="key" data-key="k">K</div>
+            <div class="key" data-key="l">L</div>
+            <div class="key" data-key=";">;</div>
+            <div class="key" data-key="'">'</div>
+            <div class="key wide" data-key="Enter">Enter</div>
+        </div>
+
+        <div class="row">
+            <div class="key xwide" data-key="Shift">Shift</div>
+            <div class="key" data-key="z">Z</div>
+            <div class="key" data-key="x">X</div>
+            <div class="key" data-key="c">C</div>
+            <div class="key" data-key="v">V</div>
+            <div class="key" data-key="b">B</div>
+            <div class="key" data-key="n">N</div>
+            <div class="key" data-key="m">M</div>
+            <div class="key" data-key=",">,</div>
+            <div class="key" data-key=".">.</div>
+            <div class="key" data-key="/">/</div>
+            <div class="key xwide" data-key="Shift">Shift</div>
+        </div>
+
+        <div class="row">
+            <div class="key wide" data-key="Control">Ctrl</div>
+            <div class="key wide" data-key="Meta">Win</div>
+            <div class="key wide" data-key="Alt">Alt</div>
+            <div class="key space" data-key=" ">Space</div>
+            <div class="key wide" data-key="Alt">Alt</div>
+            <div class="key wide" data-key="Control">Ctrl</div>
+        </div>
+
+    </div>
+
+    <div id="pressedKeys">
+        Pressed keys: —
+    </div>
+
+    <script>
+        const pressed = new Set();
+
+        document.addEventListener("keydown", function(event) {
+
+            event.preventDefault();
+
+            let key = event.key;
+            let code = event.code;
+
+            document.getElementById("lastKey").textContent =
+                "Last Key: " + key + " | Code: " + code;
+
+            pressed.add(code);
+
+            document.getElementById("pressedKeys").textContent =
+                "Pressed keys: " + [...pressed].join(" + ");
+
+            document.querySelectorAll(".key").forEach(function(element) {
+
+                let dataKey = element.dataset.key;
+
+                if (
+                    dataKey === key ||
+                    dataKey === code ||
+                    dataKey.toLowerCase() === key.toLowerCase()
+                ) {
+                    element.classList.add("pressed");
+                }
+
+            });
+        });
+
+        document.addEventListener("keyup", function(event) {
+
+            document.querySelectorAll(".key").forEach(function(element) {
+
+                let dataKey = element.dataset.key;
+
+                if (
+                    dataKey === event.key ||
+                    dataKey === event.code ||
+                    dataKey.toLowerCase() === event.key.toLowerCase()
+                ) {
+                    element.classList.remove("pressed");
+                }
+            });
+
+            pressed.delete(event.code);
+
+            document.getElementById("pressedKeys").textContent =
+                pressed.size
+                ? "Pressed keys: " + [...pressed].join(" + ")
+                : "Pressed keys: —";
+        });
+    </script>
+
+</body>
+</html>
